@@ -22,6 +22,7 @@ namespace HotelReservation
             conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\HotelReservation\HotelReservation\Reservation.mdf;Integrated Security=True");
             conn.Open();
             this.form_heading.Text = "Room Number: " + Main.roomNum.ToString();
+            hotel_name.Text = Main.hotelNameFetch(Main.roomNum);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace HotelReservation
             cmd = new SqlCommand("spReservation", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ActionType", "SaveData");
-            cmd.Parameters.AddWithValue("@UserId", 1);
+            cmd.Parameters.AddWithValue("@UserId", Login.user_id);
             cmd.Parameters.AddWithValue("@RoomId", Main.roomNum);
             cmd.Parameters.AddWithValue("@DOR", start_date);
             cmd.Parameters.AddWithValue("@DOD", end_date);

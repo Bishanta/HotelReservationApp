@@ -1,7 +1,7 @@
 ﻿
 namespace HotelReservation
 {
-    partial class Login
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@ namespace HotelReservation
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,10 +39,7 @@ namespace HotelReservation
             this.user_field = new System.Windows.Forms.TextBox();
             this.pass_field = new System.Windows.Forms.TextBox();
             this.error_label = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.signup_btn = new System.Windows.Forms.Button();
+            this.login_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +49,29 @@ namespace HotelReservation
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label1.Location = new System.Drawing.Point(84, 57);
+            this.label1.Location = new System.Drawing.Point(74, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 37);
+            this.label1.Size = new System.Drawing.Size(155, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LOG IN";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "SIGN UP";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HotelReservation.Properties.Resources.icons8_user_40;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 172);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelReservation.Properties.Resources.icons8_password_1441;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 228);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 34);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -85,7 +101,7 @@ namespace HotelReservation
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 33);
             this.button1.TabIndex = 4;
-            this.button1.Text = "LOG IN";
+            this.button1.Text = "SIGN UP";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -95,7 +111,7 @@ namespace HotelReservation
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(130, 407);
+            this.label2.Location = new System.Drawing.Point(125, 412);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 16);
             this.label2.TabIndex = 5;
@@ -112,7 +128,6 @@ namespace HotelReservation
             this.user_field.Name = "user_field";
             this.user_field.Size = new System.Drawing.Size(199, 20);
             this.user_field.TabIndex = 6;
-            this.user_field.TextChanged += new System.EventHandler(this.user_field_TextChanged);
             // 
             // pass_field
             // 
@@ -131,66 +146,40 @@ namespace HotelReservation
             // 
             this.error_label.AutoSize = true;
             this.error_label.ForeColor = System.Drawing.Color.Red;
-            this.error_label.Location = new System.Drawing.Point(31, 121);
+            this.error_label.Location = new System.Drawing.Point(27, 112);
+            this.error_label.MinimumSize = new System.Drawing.Size(230, 15);
             this.error_label.Name = "error_label";
             this.error_label.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.error_label.Size = new System.Drawing.Size(8, 13);
+            this.error_label.Size = new System.Drawing.Size(230, 15);
             this.error_label.TabIndex = 7;
+            this.error_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.error_label.Click += new System.EventHandler(this.error_label_Click);
             // 
-            // pictureBox2
+            // login_btn
             // 
-            this.pictureBox2.Image = global::HotelReservation.Properties.Resources.icons8_user_40;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 172);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 31);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.login_btn.BackColor = System.Drawing.Color.Lime;
+            this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.login_btn.FlatAppearance.BorderSize = 0;
+            this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_btn.ForeColor = System.Drawing.Color.White;
+            this.login_btn.Location = new System.Drawing.Point(34, 357);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(236, 33);
+            this.login_btn.TabIndex = 8;
+            this.login_btn.Text = "LOG IN";
+            this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_BtnClick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HotelReservation.Properties.Resources.icons8_password_1441;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 228);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 34);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(31, 97);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(8, 13);
-            this.label4.TabIndex = 7;
-            // 
-            // signup_btn
-            // 
-            this.signup_btn.BackColor = System.Drawing.Color.Lime;
-            this.signup_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_btn.FlatAppearance.BorderSize = 0;
-            this.signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signup_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_btn.ForeColor = System.Drawing.Color.White;
-            this.signup_btn.Location = new System.Drawing.Point(34, 357);
-            this.signup_btn.Name = "signup_btn";
-            this.signup_btn.Size = new System.Drawing.Size(236, 33);
-            this.signup_btn.TabIndex = 4;
-            this.signup_btn.Text = "SIGN UP";
-            this.signup_btn.UseVisualStyleBackColor = false;
-            this.signup_btn.Click += new System.EventHandler(this.signup_BtnClick);
-            // 
-            // Login
+            // Register
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 447);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.login_btn);
             this.Controls.Add(this.error_label);
             this.Controls.Add(this.pass_field);
             this.Controls.Add(this.user_field);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.signup_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -199,9 +188,8 @@ namespace HotelReservation
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -221,8 +209,6 @@ namespace HotelReservation
         private System.Windows.Forms.TextBox user_field;
         private System.Windows.Forms.TextBox pass_field;
         private System.Windows.Forms.Label error_label;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button signup_btn;
+        private System.Windows.Forms.Button login_btn;
     }
 }
-

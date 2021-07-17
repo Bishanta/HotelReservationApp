@@ -39,6 +39,7 @@ namespace HotelReservation
         private void CancelReservation_Load(object sender, EventArgs e)
         {
             form_heading.Text = "Room Number " + Main.roomNum;
+            hotel_name.Text = Main.hotelNameFetch(Main.roomNum);
             cmd = new SqlCommand("spReservation", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ActionType", "FetchBookedRoom");

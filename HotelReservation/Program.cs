@@ -8,6 +8,7 @@ namespace HotelReservation
 {
     static class Program
     {
+        public static Connection conn;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +17,9 @@ namespace HotelReservation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            conn = new Connection();
+            
             Application.Run(new Login());
         }
     }

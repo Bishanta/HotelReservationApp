@@ -28,8 +28,30 @@ namespace HotelReservation
             conn.Open();
             load_active_Reservations();
             loadCheckboxes();
-            Debug.WriteLine("Hlw");
 
+        }
+
+        public static string hotelNameFetch(int room_id)
+        {
+            
+            SqlCommand roomCmd = new SqlCommand("select hotel_id from Room where room_id = " + room_id, Connection.conn);
+            using (SqlDataReader newReader = roomCmd.ExecuteReader())
+            {
+                if (newReader.Read())
+                {
+                    int hotel_id = (int)newReader["hotel_id"];
+                    SqlCommand hotelCmd = new SqlCommand("select hotel_name from Hotel where hotel_id = " + hotel_id, Connection.conn);
+                    using (SqlDataReader hotelReader = hotelCmd.ExecuteReader())
+                    {
+                        if (hotelReader.Read()) return hotelReader["hotel_name"].ToString();
+                        else return null;
+                    }
+
+                }
+                else return null;
+
+            }
+                
         }
 
         private void loadCheckboxes()
@@ -107,7 +129,7 @@ namespace HotelReservation
             cmd = new SqlCommand("spReservation", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ActionType", "FetchuserRecord");
-            cmd.Parameters.AddWithValue("@UserId", 1);
+            cmd.Parameters.AddWithValue("@UserId", Login.user_id);
             
             using (dr = cmd.ExecuteReader())
             {

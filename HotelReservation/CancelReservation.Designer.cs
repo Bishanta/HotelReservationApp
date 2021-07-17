@@ -93,9 +93,9 @@ namespace HotelReservation
             this.label99.ForeColor = System.Drawing.Color.Black;
             this.label99.Location = new System.Drawing.Point(135, 141);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(108, 18);
+            this.label99.Size = new System.Drawing.Size(81, 18);
             this.label99.TabIndex = 2;
-            this.label99.Text = "Date of Arrival :";
+            this.label99.Text = "Departure :";
             this.label99.Click += new System.EventHandler(this.label3_Click);
             // 
             // dod

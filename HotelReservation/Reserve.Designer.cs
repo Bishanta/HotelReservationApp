@@ -36,6 +36,8 @@ namespace HotelReservation
             this.label1 = new System.Windows.Forms.Label();
             this.date_starting = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.hotel_name = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // confirm_btn
@@ -45,7 +47,7 @@ namespace HotelReservation
             this.confirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm_btn.ForeColor = System.Drawing.Color.White;
-            this.confirm_btn.Location = new System.Drawing.Point(73, 174);
+            this.confirm_btn.Location = new System.Drawing.Point(66, 194);
             this.confirm_btn.Name = "confirm_btn";
             this.confirm_btn.Size = new System.Drawing.Size(424, 27);
             this.confirm_btn.TabIndex = 0;
@@ -66,7 +68,7 @@ namespace HotelReservation
             // 
             // date_ending
             // 
-            this.date_ending.Location = new System.Drawing.Point(222, 124);
+            this.date_ending.Location = new System.Drawing.Point(215, 144);
             this.date_ending.Name = "date_ending";
             this.date_ending.Size = new System.Drawing.Size(275, 20);
             this.date_ending.TabIndex = 2;
@@ -76,7 +78,7 @@ namespace HotelReservation
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(70, 126);
+            this.label2.Location = new System.Drawing.Point(63, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 1;
@@ -88,7 +90,7 @@ namespace HotelReservation
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(70, 92);
+            this.label1.Location = new System.Drawing.Point(63, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 1;
@@ -97,7 +99,7 @@ namespace HotelReservation
             // 
             // date_starting
             // 
-            this.date_starting.Location = new System.Drawing.Point(222, 90);
+            this.date_starting.Location = new System.Drawing.Point(215, 110);
             this.date_starting.Name = "date_starting";
             this.date_starting.Size = new System.Drawing.Size(275, 20);
             this.date_starting.TabIndex = 2;
@@ -110,6 +112,29 @@ namespace HotelReservation
             this.panel1.Size = new System.Drawing.Size(236, 1);
             this.panel1.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(63, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Hotel Name: ";
+            this.label3.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // hotel_name
+            // 
+            this.hotel_name.AutoSize = true;
+            this.hotel_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotel_name.ForeColor = System.Drawing.Color.Black;
+            this.hotel_name.Location = new System.Drawing.Point(212, 81);
+            this.hotel_name.Name = "hotel_name";
+            this.hotel_name.Size = new System.Drawing.Size(0, 18);
+            this.hotel_name.TabIndex = 1;
+            this.hotel_name.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Reserve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +143,8 @@ namespace HotelReservation
             this.ClientSize = new System.Drawing.Size(534, 236);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.date_starting);
+            this.Controls.Add(this.hotel_name);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.date_ending);
             this.Controls.Add(this.label2);
@@ -142,5 +169,7 @@ namespace HotelReservation
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker date_starting;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label hotel_name;
     }
 }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -18,6 +17,7 @@ namespace HotelReservation
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader dr;
+        public static int user_id;
         public Login()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace HotelReservation
         private void button1_Click(object sender, EventArgs e)
         {
             String user_name = user_field.Text;
-            String password = pass_field.Text;
+            String password = encryptpass(pass_field.Text);
             Debug.WriteLine(password);
             Debug.WriteLine("select * from Room where user_name=" + user_name + " and password=" + password);
 
@@ -44,6 +44,7 @@ namespace HotelReservation
             {
                 if (dr.Read())
                 {
+                    user_id = (int) dr["user_id"];
                     new Main().Show();
                     this.Hide();
                 }
@@ -51,6 +52,15 @@ namespace HotelReservation
 
             };
 
+        }
+
+        public string encryptpass(string password)
+        {
+            string msg = "";
+            byte[] encode = new byte[password.Length];
+            encode = Encoding.UTF8.GetBytes(password);
+            msg = Convert.ToBase64String(encode);
+            return msg;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -66,6 +76,12 @@ namespace HotelReservation
         private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void signup_BtnClick(object sender, EventArgs e)
+        {
+            new Register().Show();
+            this.Hide();
         }
     }
 }
